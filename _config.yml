@@ -1,5 +1,4 @@
-
 title: My Cyber Blog
 description: A minimal cybersecurity blog.
-baseurl: ""
-url: ""
+baseurl: "" # Leave blank if deploying at root
+url: "https://espenssk.github.io"
