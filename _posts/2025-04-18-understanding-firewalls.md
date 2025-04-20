@@ -10,16 +10,40 @@ excerpt: >
 
 ### What Is a Firewall?
 
-A firewall is a network security system that filters traffic. Whether you're managing a business network or home Wi-Fi, firewalls are a key defense layer.
+A firewall is a network security system that monitors and controls incoming and outgoing traffic based on predetermined security rules. Firewalls are essential for both personal and business-level security, and they serve as the first line of defense in a network.
 
 ### Types of Firewalls
 
-- Packet-filtering
-- Stateful inspection
-- Proxy firewalls
-- Next-gen firewalls
+There are several types of firewalls:
+
+- **Packet-filtering firewalls**
+- **Stateful inspection firewalls**
+- **Proxy firewalls**
+- **Next-generation firewalls (NGFWs)**
+
+Each of these has different capabilities depending on the environment and security needs.
+
+### Why Firewalls Matter
+
+They help:
+
+- Prevent unauthorized access
+- Monitor and log traffic
+- Enforce policy controls
+
+> "Firewalls are not optional anymore — they're foundational."
+
+---
 
 ### Getting Started
 
-You can start using a firewall via your router or operating system. Most modern devices include built-in options.
+To implement a firewall at home:
 
+1. Log into your router settings
+2. Enable the built-in firewall
+3. Create basic rules (block external access to unused ports)
+4. Keep firmware up to date
+
+---
+
+With the right firewall in place, you dramatically reduce your risk exposure.
