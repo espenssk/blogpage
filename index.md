@@ -21,7 +21,10 @@ title: Home
       <li>
         <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
         <p><small>{{ post.date | date: "%B %d, %Y" }}</small></p>
+        <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
+        <a href="{{ post.url }}">Read more →</a>
       </li>
     {% endfor %}
   </ul>
 </section>
+
