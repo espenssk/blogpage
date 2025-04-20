@@ -189,3 +189,40 @@ footer {
     padding-left: 0.5rem;
   }
 }
+/* === THEME TOGGLE BUTTON === */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/* === DARK MODE === */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark-mode a {
+  color: #ffa726;
+}
+
+body.dark-mode header {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode nav a {
+  color: #ffa726;
+}
+
+body.dark-mode .hero {
+  background: #1a1a1a;
+}
+
+body.dark-mode footer {
+  background-color: #1f1f1f;
+  color: #aaa;
+}
+
