@@ -1,0 +1,8 @@
+/* assets/css/header.css */
+/* HEADER & NAV */
+header { background: #d35400; padding: 1rem 2rem; }
+.header-container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: auto; }
+.logo-link img { max-height: 50px; }
+nav a { color: white; text-decoration: none; font-size: 0.9rem; font-weight: 300; text-transform: uppercase; letter-spacing: 0.8px; }
+.menu-toggle { display: none; background: none; border: none; font-size: 2rem; color: white; cursor: pointer; }
+.floating-toggle { /* ...floating toggle styles... */ }

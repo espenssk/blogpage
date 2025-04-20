@@ -1,0 +1,9 @@
+/* assets/css/hero.css */
+/* HERO GRID */
+.hero-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 0; padding-top:1rem; }
+.hero-grid-item { position: relative; height:300px; overflow:hidden; border-radius:6px; background-size:cover; background-position:center; transition: transform .3s ease; }
+.hero-grid-item:hover { transform: scale(1.02); }
+.hero-grid-item::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 0; }
+.hero-overlay { position: absolute; bottom:0; left:0; width:100%; height:100%; display:flex; align-items:flex-end; justify-content:center; padding:1rem; z-index:2; }
+.hero-overlay span { font-family:'IBM Plex Sans', sans-serif; font-size:clamp(1rem,2.5vw,1.4rem); font-weight:700; color:#fff; text-align:center; text-shadow:0 2px 4px rgba(0,0,0,0.6); width:100%; white-space:normal; overflow-wrap:break-word; hyphens:auto; }
+.hero-category { /* ... */ }

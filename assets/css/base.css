@@ -1,0 +1,5 @@
+/* assets/css/base.css */
+/* RESET & BASE STYLES */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'IBM Plex Sans', sans-serif; background: #fff; color: #222; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+main { padding: 0 1.5rem; max-width: 1200px; margin: auto; }
