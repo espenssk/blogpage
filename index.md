@@ -8,12 +8,16 @@ title: Home
   {% assign featured = site.posts | slice: 0, 4 %}
   {% for post in featured %}
     <a href="{{ post.url }}" class="hero-grid-item" style="background-image: url('{{ post.thumbnail | relative_url }}');">
+      {% if post.categories[0] %}
+        <div class="hero-category">{{ post.categories[0] }}</div>
+      {% endif %}
       <div class="hero-overlay">
         <span>{{ post.title }}</span>
       </div>
     </a>
   {% endfor %}
 </section>
+
 
 <!-- BLOG LIST WITH THUMBNAIL LEFT -->
 <ul class="post-list">
