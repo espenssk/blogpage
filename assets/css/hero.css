@@ -3,7 +3,7 @@
 .hero-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 0.5rem;      /* ← added breathing room between cards */
+    gap: 0.5rem;                 /* breathing room between cards */
     padding-top: 1rem;
   }
   
@@ -14,12 +14,12 @@
     border-radius: 6px;
     background-size: cover;
     background-position: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ← animate shadow too */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .hero-grid-item:hover {
     transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);             /* ← subtle depth on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* subtle hover depth */
   }
   
   .hero-grid-item::before {
@@ -56,8 +56,10 @@
     hyphens: auto;
   }
   
-  /* (keep your .hero-category styles here) */
+  /* keep your .hero-category styles here */
   .hero-category {
     /* ... */
   }
+  
+  /* (animation keyframes removed) */
   
