@@ -226,3 +226,26 @@ body.dark-mode footer {
   color: #aaa;
 }
 
+.theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+nav .theme-toggle {
+  margin-left: 1rem;
+  padding: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: white;
+}
+
+/* Optional hover effect */
+.theme-toggle:hover {
+  color: #ffa726;
+}
+
+
