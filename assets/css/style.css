@@ -17,7 +17,7 @@ main {
   margin: 0 auto;
 }
 
-/* === HEADER & NAVIGATION === */
+/* === HEADER & NAV === */
 header {
   background-color: #d35400;
   padding: 1rem 2rem;
@@ -41,6 +41,7 @@ header {
 nav {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
 nav a {
@@ -52,7 +53,7 @@ nav a {
   letter-spacing: 0.8px;
 }
 
-/* === HAMBURGER MENU BUTTON === */
+/* === HAMBURGER MENU === */
 .menu-toggle {
   display: none;
   background: none;
@@ -62,91 +63,34 @@ nav a {
   cursor: pointer;
 }
 
-/* === HERO SECTION === */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 2rem 0;
-  background: #fef6f0;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.hero-text {
-  flex: 1 1 300px;
-  padding: 1rem;
-  background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.03);
-}
-
-.hero-text h2 {
-  font-size: 2rem;
-  color: #d35400;
-  margin-top: 0;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-  margin: 1rem 0;
-}
-
-.hero-text a {
-  display: inline-block;
-  padding: 0.7rem 1.5rem;
-  background-color: #d35400;
+.theme-toggle {
+  background: none;
+  border: none;
   color: white;
-  border-radius: 4px;
-  font-weight: 500;
-  text-decoration: none;
-  margin-top: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 1rem;
 }
 
-.hero-image {
-  flex: 1 1 300px;
-  display: flex;
-  justify-content: center;
+/* === DARK MODE === */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+body.dark-mode a {
+  color: #ffa726;
+}
+body.dark-mode header {
+  background-color: #1f1f1f;
+}
+body.dark-mode nav a {
+  color: #ffa726;
+}
+body.dark-mode footer {
+  background-color: #1f1f1f;
+  color: #aaa;
 }
 
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-/* === HERO CARD === */
-.hero-card {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  margin: 2rem auto;
-  max-width: 900px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.hero-card-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #d35400;
-}
-
-.hero-card-content p {
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
-  color: #333;
-}
-
-.hero-card-content a {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background-color: #d35400;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 500;
-}
 /* === HERO GRID === */
 .hero-grid {
   display: grid;
@@ -177,37 +121,22 @@ nav a {
   bottom: 0;
   width: 100%;
   padding: 0.5rem 1rem;
-  background: rgba(0, 0, 0, 0.5); /* 50% black */
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   font-weight: 500;
   font-size: 1rem;
   text-align: left;
 }
 
-
-/* === DARK MODE HERO === */
-body.dark-mode .hero-card {
-  background-color: #1c1c1c;
-  color: #eee;
+/* === POST LIST === */
+.post-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 2rem 0;
 }
-
-body.dark-mode .hero-card-content h2 {
-  color: #ffa726;
-}
-
-body.dark-mode .hero-card-content p {
-  color: #ccc;
-}
-
-body.dark-mode .hero-card-content a {
-  background-color: #ffa726;
-  color: #111;
-}
-
 
 .post-list li {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
   gap: 1.5rem;
   margin-bottom: 2rem;
@@ -216,36 +145,49 @@ body.dark-mode .hero-card-content a {
   flex-wrap: wrap;
 }
 
-.post-info {
-  flex: 1 1 65%;
-  min-width: 250px;
-}
-
-.right-thumb {
+.post-thumb-left {
   width: 140px;
-  border-radius: 6px;
+  height: 140px;
   object-fit: cover;
+  border-radius: 6px;
   flex-shrink: 0;
 }
 
-/* Mobile responsiveness */
-@media screen and (max-width: 768px) {
-  .post-list li {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .right-thumb {
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  .post-info {
-    flex: 1 1 100%;
-  }
+.post-info {
+  flex: 1 1 300px;
 }
 
+.post-info h4 {
+  margin-top: 0;
+}
+
+.post-info a {
+  color: #d35400;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.post-info a:hover {
+  text-decoration: underline;
+}
+
+/* === FADE-IN ANIMATIONS === */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.fade-in-delay {
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* === FOOTER === */
 footer {
@@ -257,7 +199,7 @@ footer {
   margin-top: 2rem;
 }
 
-/* === MOBILE STYLES === */
+/* === MOBILE === */
 @media screen and (max-width: 768px) {
   .header-container {
     flex-direction: column;
@@ -279,144 +221,20 @@ footer {
 
   .menu-toggle {
     display: block;
-    margin-left: auto;
-    margin-top: 0.5rem;
   }
 
-  .hero {
+  .post-list li {
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 2rem 1rem;
   }
 
-  .hero-text,
-  .hero-image {
-    flex: 1 1 100%;
-  }
-
-  .hero-text a {
-    margin-top: 1rem;
-  }
-
-  main {
-    padding: 0 1rem;
-  }
-
-  .post-list li {
-    padding-left: 0.5rem;
-  }
-}
-/* === THEME TOGGLE BUTTON === */
-.theme-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin-left: 1rem;
-}
-
-/* === DARK MODE === */
-body.dark-mode {
-  background-color: #121212;
-  color: #eee;
-}
-
-body.dark-mode a {
-  color: #ffa726;
-}
-
-body.dark-mode header {
-  background-color: #1f1f1f;
-}
-
-body.dark-mode nav a {
-  color: #ffa726;
-}
-
-body.dark-mode .hero {
-  background: #1a1a1a;
-}
-
-body.dark-mode footer {
-  background-color: #1f1f1f;
-  color: #aaa;
-}
-
-.theme-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin-left: auto;
-}
-
-nav .theme-toggle {
-  margin-left: 1rem;
-  padding: 0;
-  font-size: 1.4rem;
-  line-height: 1;
-  color: white;
-}
-
-/* Optional hover effect */
-.theme-toggle:hover {
-  color: #ffa726;
-}
-
-/* === FADE-IN ANIMATIONS === */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.fade-in-delay {
-  animation-delay: 0.2s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* === THUMBNAILS === */
-.post-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 1rem;
-  flex-wrap: wrap;
-}
-
-.post-thumb {
-  width: 120px;
-  height: auto;
-  border-radius: 6px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.post-info {
-  flex: 1 1 300px;
-}
-
-/* === MOBILE STYLES === */
-@media screen and (max-width: 600px) {
-  .post-list li {
-    flex-direction: column;
-  }
-
-  .post-thumb {
+  .post-thumb-left {
     width: 100%;
     height: auto;
   }
+
+  .post-info {
+    flex: 1 1 100%;
+  }
 }
-
-
-
