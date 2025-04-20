@@ -3,16 +3,15 @@ layout: default
 title: Home
 ---
 
-<section class="hero">
-  <div class="hero-text">
+<section class="hero-card fade-in">
+  <div class="hero-card-content">
     <h2>Welcome to EatherSec</h2>
-    <p>Your source for insight and confidence in the world of cyber security. From articles to resources — stay ahead of threats.</p>
+    <p>Your source for insight and confidence in the world of cyber security.</p>
+    <p>From articles to resources — stay ahead of threats with practical knowledge and trustworthy insights.</p>
     <a href="/blogpage/articles/">Explore Articles</a>
   </div>
-  <div class="hero-image">
-    <img src="https://source.unsplash.com/400x300/?cybersecurity" alt="Cyber Security">
-  </div>
 </section>
+
 
 <section>
   <h3>Recent Blog Posts</h3>
