@@ -5,7 +5,8 @@
 
 body {
   margin: 0;
-  font-family: 'IBM Plex Sans', sans-serif;  background-color: #fff;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: #fff;
   color: #222;
   line-height: 1.6;
 }
@@ -71,6 +72,33 @@ nav a {
   margin-left: 1rem;
 }
 
+/* === FLOATING DARK MODE BUTTON === */
+.floating-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: #d35400;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.floating-toggle:hover {
+  background-color: #e1701a;
+}
+
+body.dark-mode .floating-toggle {
+  background-color: #ffa726;
+  color: #111;
+}
+
 /* === DARK MODE === */
 body.dark-mode {
   background-color: #121212;
@@ -89,20 +117,24 @@ body.dark-mode footer {
   background-color: #1f1f1f;
   color: #aaa;
 }
+body.dark-mode h2::after,
+body.dark-mode h3::after {
+  background-color: #ffa726;
+}
+body.dark-mode .category-label {
+  background-color: #ffa726;
+  color: #111;
+}
 
 /* === HERO GRID === */
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  padding-top: 2rem;         /* spacing above the grid */
-  padding-left: 0;
-  padding-right: 0;
+  gap: 0;
   margin: 0;
   max-width: 100%;
+  padding-top: 2rem;
 }
-
-
 
 .hero-grid-item {
   position: relative;
@@ -220,97 +252,19 @@ body.dark-mode footer {
   text-decoration: underline;
 }
 
-/* === FADE-IN ANIMATIONS === */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.fade-in-delay {
-  animation-delay: 0.2s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* === FOOTER === */
-footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  background-color: #f4f4f4;
-  color: #888;
+/* === HEADINGS WITH UNDERLINES === */
+h2, h3 {
+  position: relative;
   margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #d35400;
 }
 
-/* === MOBILE === */
-@media screen and (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding-top: 1rem;
-    gap: 1rem;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .post-list li {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .post-thumb-left {
-    width: 100%;
-    height: auto;
-  }
-
-  .post-info {
-    flex: 1 1 100%;
-  }
-}
-
-.floating-toggle {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  background-color: #d35400;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 1.4rem;
-  width: 44px;
-  height: 44px;
-  cursor: pointer;
-  z-index: 999;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
-}
-
-.floating-toggle:hover {
-  background-color: #e1701a;
-}
-
-body.dark-mode .floating-toggle {
-  background-color: #ffa726;
-  color: #111;
-}
-
+h2::after, h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
