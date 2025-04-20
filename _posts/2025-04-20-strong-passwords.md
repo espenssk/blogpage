@@ -3,7 +3,7 @@ layout: post
 title: "How to Create and Manage Strong Passwords"
 date: 2025-04-20
 categories: [tutorial]
-thumbnail: /assets/images/password.png
+thumbnail: /assets/images/passwords.png
 excerpt: >
   Weak passwords are a hacker’s dream. Learn how to create secure ones—and remember them—with these practical strategies.
 ---
