@@ -114,6 +114,59 @@ nav a {
   height: auto;
   border-radius: 6px;
 }
+/* === HERO CARD === */
+.hero-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-card-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #d35400;
+}
+
+.hero-card-content p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.hero-card-content a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #d35400;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* === DARK MODE HERO === */
+body.dark-mode .hero-card {
+  background-color: #1c1c1c;
+  color: #eee;
+}
+
+body.dark-mode .hero-card-content h2 {
+  color: #ffa726;
+}
+
+body.dark-mode .hero-card-content p {
+  color: #ccc;
+}
+
+body.dark-mode .hero-card-content a {
+  background-color: #ffa726;
+  color: #111;
+}
+
 
 /* === BLOG LIST === */
 .post-list {
