@@ -1,30 +1,44 @@
+/* === RESET + BASE === */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: #fff;
   color: #222;
+  line-height: 1.6;
 }
 
+/* === HEADER === */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #d35400;
   padding: 1rem 2rem;
+  flex-wrap: wrap;
 }
 
-header h1 {
+header h1.logo {
   margin: 0;
-  font-size: 1.5rem;
 }
 
-header h1 a {
-  color: #fff;
-  text-decoration: none;
+header h1.logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* === NAVIGATION === */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 nav a {
-  margin-left: 1.5rem;
   color: #fff;
   text-decoration: none;
   font-weight: 300;
@@ -33,6 +47,7 @@ nav a {
   text-transform: uppercase;
 }
 
+/* === HERO === */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -40,15 +55,17 @@ nav a {
   background: #fef6f0;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .hero-text {
-  max-width: 500px;
+  flex: 1 1 300px;
 }
 
 .hero-text h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #d35400;
+  margin-top: 0;
 }
 
 .hero-text p {
@@ -57,6 +74,7 @@ nav a {
 }
 
 .hero-text a {
+  display: inline-block;
   padding: 0.7rem 1.5rem;
   background-color: #d35400;
   color: #fff;
@@ -65,29 +83,34 @@ nav a {
   font-weight: 500;
 }
 
-.logo img {
-  height: 40px;
-  width: auto;
-  vertical-align: middle;
+.hero-image {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
 }
 
-
 .hero-image img {
-  max-width: 400px;
-  width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 6px;
 }
 
+/* === POSTS / LISTS === */
 .post-list {
   list-style: none;
   padding-left: 0;
+  margin: 2rem;
 }
 
 .post-list li {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
+.post-list h3 {
+  margin: 0 0 0.3rem;
+}
+
+/* === FOOTER === */
 footer {
   text-align: center;
   padding: 1rem;
@@ -95,4 +118,32 @@ footer {
   background-color: #f4f4f4;
   color: #888;
   margin-top: 2rem;
+}
+
+/* === RESPONSIVE NAVIGATION === */
+@media screen and (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+  }
+
+  .hero-text a {
+    margin-top: 1rem;
+  }
 }
