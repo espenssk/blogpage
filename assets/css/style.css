@@ -94,11 +94,11 @@ body.dark-mode footer {
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin: 2rem auto;
-  max-width: 1200px;
-  padding: 0 1rem;
+  gap: 0; /* ← remove spacing */
+  margin: 0 auto;
+  max-width: 100%;
 }
+
 
 .hero-grid-item {
   position: relative;
