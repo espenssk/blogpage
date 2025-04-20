@@ -3,7 +3,8 @@ layout: default
 title: Home
 ---
 
-<!-- HERO GRID WITH 4 FEATURED ARTICLES -->
+## Featured Articles
+
 <section class="hero-grid fade-in">
   {% assign featured = site.posts | slice: 0, 4 %}
   {% for post in featured %}
@@ -18,8 +19,8 @@ title: Home
   {% endfor %}
 </section>
 
+## Recent Blog Posts
 
-<!-- BLOG LIST WITH THUMBNAIL LEFT -->
 <ul class="post-list">
   {% for post in site.posts %}
     <li class="fade-in fade-in-delay">
