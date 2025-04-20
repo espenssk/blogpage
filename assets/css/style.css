@@ -1,4 +1,3 @@
-/* === RESET + BASE === */
 * {
   box-sizing: border-box;
 }
@@ -11,7 +10,7 @@ body {
   line-height: 1.6;
 }
 
-/* === HEADER === */
+/* Header */
 header {
   display: flex;
   align-items: center;
@@ -21,33 +20,42 @@ header {
   flex-wrap: wrap;
 }
 
-header h1.logo {
-  margin: 0;
+.logo-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
-header h1.logo img {
-  height: 40px;
+.logo-link img {
+  max-height: 50px;
   width: auto;
 }
 
-/* === NAVIGATION === */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
 nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 0.5rem;
+  gap: 1.2rem;
 }
 
 nav a {
-  color: #fff;
+  color: white;
   text-decoration: none;
-  font-weight: 300;
   font-size: 0.9rem;
-  letter-spacing: 0.8px;
+  font-weight: 300;
   text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
 
-/* === HERO === */
+/* Hero */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -65,22 +73,17 @@ nav a {
 .hero-text h2 {
   font-size: 2rem;
   color: #d35400;
-  margin-top: 0;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-  margin: 1rem 0;
 }
 
 .hero-text a {
   display: inline-block;
   padding: 0.7rem 1.5rem;
   background-color: #d35400;
-  color: #fff;
-  text-decoration: none;
+  color: white;
   border-radius: 4px;
   font-weight: 500;
+  text-decoration: none;
+  margin-top: 1rem;
 }
 
 .hero-image {
@@ -95,7 +98,7 @@ nav a {
   border-radius: 6px;
 }
 
-/* === POSTS / LISTS === */
+/* Post list */
 .post-list {
   list-style: none;
   padding-left: 0;
@@ -106,11 +109,7 @@ nav a {
   margin-bottom: 1.5rem;
 }
 
-.post-list h3 {
-  margin: 0 0 0.3rem;
-}
-
-/* === FOOTER === */
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
@@ -120,17 +119,26 @@ footer {
   margin-top: 2rem;
 }
 
-/* === RESPONSIVE NAVIGATION === */
-@media screen and (max-width: 700px) {
+/* Mobile */
+@media screen and (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
   header {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 1rem;
   }
 
   .hero {
@@ -141,9 +149,5 @@ footer {
   .hero-text,
   .hero-image {
     flex: 1 1 100%;
-  }
-
-  .hero-text a {
-    margin-top: 1rem;
   }
 }
