@@ -3,7 +3,7 @@ layout: post
 title: "Recognizing Phishing: What to Watch For"
 date: 2025-04-19
 categories: [news]
-thumbnail: /assets/images/image2.png
+thumbnail: /assets/images/phish.png
 excerpt: >
   Phishing attacks are becoming harder to detect. Here’s how to recognize them and protect your credentials from falling into the wrong hands.
 ---
