@@ -5,6 +5,8 @@ title: Home
 
 ## Featured Articles
 
+<div class="featured-divider"></div>
+
 <section class="hero-grid fade-in">
   {% assign featured = site.posts | slice: 0, 4 %}
   {% for post in featured %}
@@ -18,6 +20,7 @@ title: Home
     </a>
   {% endfor %}
 </section>
+
 
 ## Recent Blog Posts
 
