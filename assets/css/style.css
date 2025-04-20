@@ -169,17 +169,29 @@ body.dark-mode .category-label {
   z-index: 2;
   opacity: 1;
   background: none;
-  height: 60px;
+  height: 100%;
+  align-items: flex-end; /* align text toward bottom */
+  padding: 1rem;
 }
 
 .hero-overlay span {
-  font-family: 'Merriweather Sans', sans-serif;
-  font-size: 1.15rem;
+  /* existing properties… */
+  font-family: 'IBM Plex Sans', sans-serif;
+  /* use a fluid font size that clamps between 1rem and 1.4rem */
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
   font-weight: 700;
   text-align: center;
   width: 100%;
   color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+
+  /* allow wrapping */
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  padding: 0 0.5rem;  /* add horizontal padding on small screens */
 }
+
 
 .hero-category {
   position: absolute;
