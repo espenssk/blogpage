@@ -18,11 +18,16 @@ title: Home
   <h3>Recent Blog Posts</h3>
   <ul class="post-list">
     {% for post in site.posts limit:5 %}
-      <li>
-        <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-        <p><small>{{ post.date | date: "%B %d, %Y" }}</small></p>
-        <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
-        <a href="{{ post.url }}">Read more →</a>
+      <li class="fade-in fade-in-delay">
+        {% if post.thumbnail %}
+          <img class="post-thumb" src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }} thumbnail">
+        {% endif %}
+        <div class="post-info">
+          <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+          <p><small>{{ post.date | date: "%B %d, %Y" }}</small></p>
+          <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
+          <a href="{{ post.url }}">Read more →</a>
+        </div>
       </li>
     {% endfor %}
   </ul>
