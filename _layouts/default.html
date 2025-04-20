@@ -5,29 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">    {% seo %}
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    {% seo %}
   </head>
   <body>
-  <header>
-  <div class="header-container">
-    <a class="logo-link" href="{{ '/' | relative_url }}">
-      <img src="{{ '/assets/images/eathersec-logo.png' | relative_url }}" alt="EatherSec logo" />
-    </a>
-
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-    <nav id="main-nav">
-      <a href="{{ '/' | relative_url }}">Blog</a>
-      <a href="{{ '/articles/' | relative_url }}">Articles</a>
-      <a href="{{ '/resources/' | relative_url }}">Resources</a>
-      <a href="{{ '/about/' | relative_url }}">About</a>
-      <a href="{{ '/contact/' | relative_url }}">Contact</a>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
-    </nav>
-  </div>
-</header>
-
-
+    <header>
+      <div class="header-container">
+        <a class="logo-link" href="{{ '/' | relative_url }}">
+          <img src="{{ '/assets/images/eathersec-logo.png' | relative_url }}" alt="EatherSec logo" />
+        </a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav id="main-nav">
+          <a href="{{ '/' | relative_url }}">Blog</a>
+          <a href="{{ '/articles/' | relative_url }}">Articles</a>
+          <a href="{{ '/resources/' | relative_url }}">Resources</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        </nav>
+      </div>
+    </header>
 
     <main>
       {{ content }}
@@ -42,62 +38,29 @@
         var nav = document.getElementById('main-nav');
         nav.classList.toggle('active');
       }
+
+      function toggleTheme() {
+        const body = document.body;
+        const toggleBtn = document.querySelector('.floating-toggle');
+        body.classList.toggle('dark-mode');
+        const isDark = body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        toggleBtn.textContent = isDark ? '☀️' : '🌙';
+      }
+
+      window.onload = () => {
+        const savedTheme = localStorage.getItem('theme');
+        const body = document.body;
+        const toggleBtn = document.querySelector('.floating-toggle');
+        if (savedTheme === 'dark') {
+          body.classList.add('dark-mode');
+          toggleBtn.textContent = '☀️';
+        } else {
+          toggleBtn.textContent = '🌙';
+        }
+      };
     </script>
 
-    <script>
-  function toggleMenu() {
-    var nav = document.getElementById('main-nav');
-    nav.classList.toggle('active');
-  }
-
-  // DARK MODE TOGGLE
-  function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle('dark-mode');
-    localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
-    document.querySelector('.theme-toggle').textContent =
-      body.classList.contains('dark-mode') ? '☀️' : '🌙';
-  }
-
-  // Load theme preference
-  window.onload = () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-      document.querySelector('.theme-toggle').textContent = '☀️';
-    }
-  };
-</script>
     <button class="floating-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
   </body>
 </html>
-
-<script>
-  function toggleMenu() {
-    var nav = document.getElementById('main-nav');
-    nav.classList.toggle('active');
-  }
-
-  function toggleTheme() {
-    const body = document.body;
-    const toggleBtn = document.querySelector('.floating-toggle');
-    body.classList.toggle('dark-mode');
-    const isDark = body.classList.contains('dark-mode');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    toggleBtn.textContent = isDark ? '☀️' : '🌙';
-  }
-
-  // Load theme preference
-  window.onload = () => {
-    const savedTheme = localStorage.getItem('theme');
-    const body = document.body;
-    const toggleBtn = document.querySelector('.floating-toggle');
-    if (savedTheme === 'dark') {
-      body.classList.add('dark-mode');
-      toggleBtn.textContent = '☀️';
-    } else {
-      toggleBtn.textContent = '🌙';
-    }
-  };
-</script>
-
