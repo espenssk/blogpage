@@ -1,3 +1,4 @@
+
 /* === RESET & BASE === */
 * {
   box-sizing: border-box;
@@ -53,7 +54,7 @@ nav a {
   letter-spacing: 0.8px;
 }
 
-/* === HAMBURGER & THEME TOGGLE === */
+/* === HAMBURGER === */
 .menu-toggle {
   display: none;
   background: none;
@@ -61,15 +62,6 @@ nav a {
   font-size: 2rem;
   color: white;
   cursor: pointer;
-}
-
-.theme-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin-left: 1rem;
 }
 
 /* === FLOATING DARK MODE BUTTON === */
@@ -149,35 +141,31 @@ body.dark-mode .category-label {
   transition: transform 0.3s ease;
 }
 
+.hero-grid-item:hover {
+  transform: scale(1.02);
+}
+
 .hero-grid-item::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: inherit;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.25); /* 25% opacity black overlay */
   z-index: 0;
-  transform: scale(1);
-  transition: transform 0.4s ease;
-}
-
-.hero-grid-item:hover::before {
-  transform: scale(1.05);
 }
 
 .hero-overlay {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.75rem;
   z-index: 2;
-  opacity: 1; /* Always visible */
+  opacity: 1;
+  background: none;
+  height: 60px;
 }
 
 .hero-overlay span {
@@ -186,7 +174,6 @@ body.dark-mode .category-label {
   text-align: center;
   width: 100%;
 }
-
 
 .hero-category {
   position: absolute;
