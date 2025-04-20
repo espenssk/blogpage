@@ -65,6 +65,13 @@ nav a {
   font-weight: 500;
 }
 
+.logo img {
+  height: 40px;
+  width: auto;
+  vertical-align: middle;
+}
+
+
 .hero-image img {
   max-width: 400px;
   width: 100%;
