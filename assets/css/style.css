@@ -53,7 +53,7 @@ nav a {
   letter-spacing: 0.8px;
 }
 
-/* === HAMBURGER MENU === */
+/* === HAMBURGER & THEME TOGGLE === */
 .menu-toggle {
   display: none;
   background: none;
@@ -104,28 +104,74 @@ body.dark-mode footer {
 .hero-grid-item {
   position: relative;
   height: 300px;
+  overflow: hidden;
+  border-radius: 6px;
+  text-decoration: none;
+  display: block;
   background-size: cover;
   background-position: center;
-  border-radius: 6px;
-  overflow: hidden;
-  text-decoration: none;
+  background-repeat: no-repeat;
   transition: transform 0.3s ease;
 }
 
-.hero-grid-item:hover {
-  transform: scale(1.02);
+.hero-grid-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  transform: scale(1);
+  transition: transform 0.4s ease;
+}
+
+.hero-grid-item:hover::before {
+  transform: scale(1.05);
 }
 
 .hero-overlay {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 0.5rem 1rem;
-  background: rgba(0, 0, 0, 0.5);
+  height: 60px;
+  background: rgba(0, 0, 0, 0.6);
   color: white;
-  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.hero-grid-item:hover .hero-overlay {
+  opacity: 1;
+}
+
+.hero-overlay span {
   font-size: 1rem;
-  text-align: left;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.hero-category {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  z-index: 2;
+  text-transform: uppercase;
+  pointer-events: none;
 }
 
 /* === POST LIST === */
