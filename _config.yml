@@ -1,6 +1,6 @@
 title: EatherSec
 description: Your source for insight and confidence in the world of cyber security
-baseurl: "/blogpage"
+baseurl: ""
 url: "https://espenssk.github.io"
 # theme: minima  # REMOVE this to use your own layouts
 plugins:
