@@ -175,6 +175,7 @@ body.dark-mode .category-label {
 }
 
 .hero-overlay span {
+  .hero-overlay span {
   /* existing properties… */
   font-family: 'IBM Plex Sans', sans-serif;
   /* use a fluid font size that clamps between 1rem and 1.4rem */
@@ -191,6 +192,7 @@ body.dark-mode .category-label {
   word-break: break-word;
   padding: 0 0.5rem;  /* add horizontal padding on small screens */
 }
+
 
 
 .hero-category {
