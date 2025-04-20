@@ -1,6 +1,13 @@
 // assets/js/main.js
 // Handles menu toggle and theme toggle
 
+function toggleMenu(btn) {
+  const nav = document.getElementById('main-nav');
+  const expanded = nav.classList.toggle('active');
+-  btn.setAttribute('aria-expanded', expanded);
++  btn.setAttribute('aria-expanded', expanded.toString());
+}
+
 function toggleMenu() {
   var nav = document.getElementById('main-nav');
   nav.classList.toggle('active');
@@ -27,3 +34,4 @@ window.addEventListener('DOMContentLoaded', () => {
     toggleBtn.textContent = '🌙';
   }
 });
+
