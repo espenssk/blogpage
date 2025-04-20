@@ -43,5 +43,32 @@
         nav.classList.toggle('active');
       }
     </script>
+
+    <script>
+  function toggleMenu() {
+    var nav = document.getElementById('main-nav');
+    nav.classList.toggle('active');
+  }
+
+  // DARK MODE TOGGLE
+  function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+    document.querySelector('.theme-toggle').textContent =
+      body.classList.contains('dark-mode') ? '☀️' : '🌙';
+  }
+
+  // Load theme preference
+  window.onload = () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+  };
+</script>
+
+    
   </body>
 </html>
