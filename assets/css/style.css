@@ -5,8 +5,7 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #fff;
+  font-family: 'IBM Plex Sans', sans-serif;  background-color: #fff;
   color: #222;
   line-height: 1.6;
 }
@@ -284,3 +283,30 @@ footer {
     flex: 1 1 100%;
   }
 }
+
+.floating-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: #d35400;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.floating-toggle:hover {
+  background-color: #e1701a;
+}
+
+body.dark-mode .floating-toggle {
+  background-color: #ffa726;
+  color: #111;
+}
+
