@@ -1,23 +1,99 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EatherSec</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #222;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #d35400;
+      padding: 1rem 2rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    nav a {
+      margin-left: 1rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+      background: #fef6f0;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hero-text {
+      max-width: 500px;
+    }
+    .hero-text h2 {
+      font-size: 2rem;
+      color: #d35400;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+    .hero-text a {
+      padding: 0.7rem 1.5rem;
+      background-color: #d35400;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .hero-image img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background-color: #f4f4f4;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EatherSec</h1>
+    <nav>
+      <a href="/">Blogg</a>
+      <a href="/artikler">Artikler</a>
+      <a href="/ressurser">Ressurser</a>
+      <a href="/om-oss">Om Oss</a>
+      <a href="/kontakt">Kontakt</a>
+    </nav>
+  </header>
 
-<div class="post-feed">
-  {% for post in site.posts %}
-    <article class="post-card">
-      {% if post.image %}
-        <a href="{{ post.url | relative_url }}">
-          <img src="{{ post.image }}" alt="{{ post.title }}" class="post-thumb">
-        </a>
-      {% endif %}
-      <h2 class="post-title">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </h2>
-      <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
-      <p class="post-excerpt">
-        {{ post.excerpt | strip_html | truncatewords: 25 }}
-      </p>
-    </article>
-  {% endfor %}
-</div>
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Velkommen til EatherSec</h2>
+      <p>Din kilde til innsikt og trygghet i cybersikkerhetens verden.</p>
+      <a href="/artikler">Les mer</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://source.unsplash.com/400x300/?cybersecurity" alt="Cyber security"/>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 EatherSec – Din kilde til innsikt og trygghet i cybersikkerhetens verden
+  </footer>
+</body>
+</html>
