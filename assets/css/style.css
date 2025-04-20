@@ -147,6 +147,43 @@ nav a {
   border-radius: 4px;
   font-weight: 500;
 }
+/* === HERO GRID === */
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.hero-grid-item {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.hero-grid-item:hover {
+  transform: scale(1.02);
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.5); /* 50% black */
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: left;
+}
+
 
 /* === DARK MODE HERO === */
 body.dark-mode .hero-card {
