@@ -9,14 +9,14 @@
     {% seo %}
   </head>
   <body>
-    <header>
-      <div class="logo-nav">
-        <a class="logo-link" href="{{ '/' | relative_url }}">
-          <img src="{{ '/assets/images/eathersec-logo.png' | relative_url }}" alt="EatherSec logo" />
-        </a>
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      </div>
-
+  <header>
+    <div class="header-container">
+      <a class="logo-link" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/images/eathersec-logo.png' | relative_url }}" alt="EatherSec logo" />
+      </a>
+  
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  
       <nav id="main-nav">
         <a href="{{ '/' | relative_url }}">Blog</a>
         <a href="{{ '/articles/' | relative_url }}">Articles</a>
@@ -24,7 +24,9 @@
         <a href="{{ '/about/' | relative_url }}">About</a>
         <a href="{{ '/contact/' | relative_url }}">Contact</a>
       </nav>
-    </header>
+    </div>
+  </header>
+
 
     <main>
       {{ content }}
