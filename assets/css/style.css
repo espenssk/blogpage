@@ -173,11 +173,12 @@ body.dark-mode .category-label {
 }
 
 .hero-overlay span {
-  font-size: 1.05rem;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 1.15rem;
   font-weight: 700;
   text-align: center;
   width: 100%;
-  color: #ffeb3b;
+  color: #ffffff;
 }
 
 .hero-category {
