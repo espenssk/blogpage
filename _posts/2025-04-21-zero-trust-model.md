@@ -3,7 +3,7 @@ layout: post
 title: "What Is Zero Trust Security?"
 date: 2025-04-21
 categories: [article]
-thumbnail: /assets/images/image4.png
+thumbnail: /assets/images/zerotrust.png
 excerpt: >
   The Zero Trust model flips old security thinking: never trust, always verify. Here’s what that means and how to adopt it.
 ---
