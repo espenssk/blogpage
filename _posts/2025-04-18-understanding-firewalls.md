@@ -3,7 +3,7 @@ layout: post
 title: "Understanding Firewalls: A Beginner's Guide"
 date: 2025-04-18
 categories: [article]
-thumbnail: /assets/images/image1.png
+thumbnail: /assets/images/firewall.png
 excerpt: >
   Firewalls are essential to protecting your digital assets. Learn what they are, how they work, and how to set one up.
 ---
