@@ -1,10 +1,7 @@
-
 ---
 layout: post
-title: "Sample Blog Post"
-date: 2025-04-18
-image: /assets/images/sample.jpg
-excerpt: "A quick test post to see how your blog layout looks."
+title: "Welcome to EatherSec"
+date: 2025-04-20
 ---
 
-Welcome to your blog! This is just a sample post.1111111 🎉
+Welcome to the EatherSec blog — your go-to source for cyber security insights, trends, and tips. Stay tuned as we publish updates on how to stay safe in an increasingly digital world.
