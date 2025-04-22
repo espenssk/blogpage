@@ -14,7 +14,6 @@ title: Home
 
 ## Featured Articles
 
-{% raw %}
 <section class="hero-grid fade-in">
   {% assign featured = site.posts | where_exp: "post", "post.thumbnail" %}
   {% assign featured = featured | slice: 0, 4 %}
@@ -34,7 +33,6 @@ title: Home
     </a>
   {% endfor %}
 </section>
-{% endraw %}
 
 ## Recent Blog Posts
 
