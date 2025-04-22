@@ -31,9 +31,6 @@ title: Home
   {% endfor %}
 </section>
 
-
-
-
 ## Recent Blog Posts
 
 <ul class="post-list">
