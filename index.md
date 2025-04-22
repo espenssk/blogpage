@@ -3,11 +3,13 @@ layout: default
 title: Home
 ---
 
-## Featured Articles
-
 <div class="featured-rotator">
-  <span id="featured-rotator-text">Loading...</span>
+  <a id="featured-rotator-link" href="#">
+    <span id="featured-rotator-text">Loading...</span>
+  </a>
 </div>
+
+## Featured Articles
 
 <section class="hero-grid fade-in">
   {% assign featured = site.posts | where_exp: "post", "post.thumbnail" %}
