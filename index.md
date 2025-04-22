@@ -8,12 +8,13 @@ title: Home
 <div class="featured-divider"></div>
 
 <section class="hero-grid fade-in">
-  {% assign featured = site.posts | slice: 0, 4 %}
+  {% assign featured = site.posts | where: "thumbnail" %}
+  {% assign featured = featured | slice: 0, 4 %}
   {% for post in featured %}
     <a
       href="{{ post.url }}"
       class="hero-grid-item"
-      style="background-image: url('{{ post.thumbnail | relative_url }}');"
+      style="background-image: url('{{ post.thumbnail | default: '/assets/images/fallback.jpg' | relative_url }}');"
       title="{{ post.title }}"
     >
       {% if post.categories[0] %}
@@ -25,6 +26,7 @@ title: Home
     </a>
   {% endfor %}
 </section>
+
 
 ## Recent Blog Posts
 
