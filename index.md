@@ -52,5 +52,31 @@ title: Home
         <a href="{{ post.url }}">Read more →</a>
       </div>
     </li>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const titles = [
+      {% assign featured = site.posts | sort: "date" | reverse | slice: 0, 6 %}
+      {% for post in featured %}
+        "{{ post.title | escape }}"{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ];
+    let index = 0;
+    const rotator = document.getElementById("featured-rotator-text");
+
+    function rotateTitle() {
+      rotator.classList.remove("fade-in");
+      void rotator.offsetWidth;
+      rotator.textContent = titles[index];
+      rotator.classList.add("fade-in");
+      index = (index + 1) % titles.length;
+    }
+
+    rotateTitle();
+    setInterval(rotateTitle, 8000);
+  });
+</script>
+
+  
   {% endfor %}
 </ul>
