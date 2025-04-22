@@ -1,3 +1,8 @@
+.hero-grid {
+  border: 2px solid red;
+  min-height: 200px;
+}
+
 /* === VARIABLES & BASE === */
 :root {
   --color-primary: #d35400;
