@@ -156,22 +156,29 @@ body.dark-mode .category-label {
 
 /* === HERO GRID === */
 .hero-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.5rem;
-  padding-top: var(--spacing-base);
-  margin: 0;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 1rem 0;
+  scroll-padding: 1rem;
+  border: none;
+  min-height: 200px;
+}
+.hero-grid::-webkit-scrollbar {
+  display: none;
 }
 .hero-grid-item {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
+  flex: 0 0 280px;
+  height: 200px;
+  scroll-snap-align: start;
   border-radius: 6px;
   background-size: cover;
   background-position: center;
+  position: relative;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .hero-grid-item:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -196,8 +203,8 @@ body.dark-mode .category-label {
   z-index: 2;
 }
 .hero-overlay span {
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 600;
   color: #fff;
   text-align: center;
   text-shadow: 0 2px 4px rgba(0,0,0,0.6);
@@ -220,6 +227,7 @@ body.dark-mode .category-label {
   text-transform: uppercase;
   pointer-events: none;
 }
+
 
 /* === POST LIST === */
 .post-list {
