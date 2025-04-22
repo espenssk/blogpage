@@ -7,11 +7,24 @@ title: Home
 
 <div class="featured-divider"></div>
 
-<section style="height: 300px; background-image: url('https://placehold.co/600x300'); background-size: cover;">
-  <h2 style="color: white; padding: 2rem;">Hero Test</h2>
+<section class="hero-grid fade-in">
+  {% assign featured = site.posts | slice: 0, 4 %}
+  {% for post in featured %}
+    <a
+      href="{{ post.url }}"
+      class="hero-grid-item"
+      style="background-image: url('{{ post.thumbnail | relative_url }}');"
+      title="{{ post.title }}"
+    >
+      {% if post.categories[0] %}
+        <div class="hero-category">{{ post.categories[0] }}</div>
+      {% endif %}
+      <div class="hero-overlay">
+        <span>{{ post.title }}</span>
+      </div>
+    </a>
+  {% endfor %}
 </section>
-
-
 
 ## Recent Blog Posts
 
