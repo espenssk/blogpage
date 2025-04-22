@@ -303,3 +303,23 @@ footer {
     right: 1rem;
   }
 }
+/* === FLASH NEWS === */
+
+.featured-rotator {
+  text-align: center;
+  margin: 1rem auto 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  min-height: 2.5rem;
+}
+
+#featured-rotator-text {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#featured-rotator-text.fade-in {
+  opacity: 1;
+}
+
