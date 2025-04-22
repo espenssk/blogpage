@@ -5,6 +5,10 @@ title: Home
 
 ## Featured Articles
 
+<div class="featured-rotator">
+  <span id="featured-rotator-text">Loading...</span>
+</div>
+
 <section class="hero-grid fade-in">
   {% assign featured = site.posts | where_exp: "post", "post.thumbnail" %}
   {% assign featured = featured | slice: 0, 4 %}
