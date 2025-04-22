@@ -3,6 +3,7 @@ layout: default
 title: Home
 ---
 
+<!-- Rotating headline (Flash News) -->
 <div class="featured-rotator">
   <a id="featured-rotator-link" href="#">
     <span id="featured-rotator-text">Loading...</span>
@@ -51,6 +52,8 @@ title: Home
         <a href="{{ post.url }}">Read more →</a>
       </div>
     </li>
+  {% endfor %}
+</ul>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -70,7 +73,7 @@ title: Home
     function rotatePost() {
       const post = posts[index];
       rotatorText.classList.remove("fade-in");
-      void rotatorText.offsetWidth; // restart animation
+      void rotatorText.offsetWidth;
       rotatorText.textContent = post.title;
       rotatorLink.href = post.url;
       rotatorText.classList.add("fade-in");
