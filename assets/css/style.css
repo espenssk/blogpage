@@ -307,11 +307,24 @@ footer {
 
 .featured-rotator {
   text-align: center;
-  margin: 1rem auto 2rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  min-height: 2.5rem;
+  margin: 2rem auto 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text);
+  font-style: italic;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+#featured-rotator-link {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#featured-rotator-link:hover {
+  text-decoration: underline;
+  color: var(--color-link);
 }
 
 #featured-rotator-text {
@@ -322,4 +335,3 @@ footer {
 #featured-rotator-text.fade-in {
   opacity: 1;
 }
-
