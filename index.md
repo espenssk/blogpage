@@ -3,14 +3,12 @@ layout: default
 title: Home
 ---
 
-<!-- Rotating headline (Flash News) -->
+<!-- Flash News Rotator -->
 <div class="featured-rotator">
   <a id="featured-rotator-link" href="#">
     <span id="featured-rotator-text">Loading...</span>
   </a>
 </div>
-
-## Featured Articles
 
 ## Featured Articles
 
@@ -33,6 +31,7 @@ title: Home
     </a>
   {% endfor %}
 </section>
+
 
 ## Recent Blog Posts
 
