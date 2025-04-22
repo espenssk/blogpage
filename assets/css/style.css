@@ -343,3 +343,55 @@ footer {
 #featured-rotator-text.fade-in {
   opacity: 1;
 }
+
+.hero-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  scroll-padding: 1rem;
+  padding: 1rem 0;
+  min-height: 220px;
+}
+
+.hero-grid-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 300px;
+  height: 220px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-grid-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.hero-overlay span {
+  font-size: clamp(0.9rem, 1.8vw, 1.2rem); /* smaller */
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 5;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+}
+.carousel-arrow.left { left: 0.5rem; }
+.carousel-arrow.right { right: 0.5rem; }
