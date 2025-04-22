@@ -8,23 +8,19 @@ title: Home
 <div class="featured-divider"></div>
 
 <section class="hero-grid fade-in">
-  {% assign featured = site.posts | slice: 0, 4 %}
-  {% for post in featured %}
-    <a
-      href="{{ post.url }}"
-      class="hero-grid-item"
-      style="background-image: url('{{ post.thumbnail | relative_url }}');"
-      title="{{ post.title }}"
-    >
-      {% if post.categories[0] %}
-        <div class="hero-category">{{ post.categories[0] }}</div>
-      {% endif %}
-      <div class="hero-overlay">
-        <span>{{ post.title }}</span>
-      </div>
-    </a>
-  {% endfor %}
+  <a
+    href="/2025/04/18/understanding-firewalls.html"
+    class="hero-grid-item"
+    style="background-image: url('/assets/img/test.jpg');"
+    title="Test Post"
+  >
+    <div class="hero-category">Networking</div>
+    <div class="hero-overlay">
+      <span>Understanding Firewalls</span>
+    </div>
+  </a>
 </section>
+
 
 ## Recent Blog Posts
 
