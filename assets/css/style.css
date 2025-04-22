@@ -164,12 +164,14 @@ body.dark-mode .category-label {
 }
 .hero-grid-item {
   position: relative;
+  z-index: 1;
   overflow: hidden;
   border-radius: 6px;
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .hero-grid-item:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
