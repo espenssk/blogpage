@@ -7,19 +7,10 @@ title: Home
 
 <div class="featured-divider"></div>
 
-<section class="hero-grid fade-in">
-  <a
-    href="/2025/04/18/understanding-firewalls.html"
-    class="hero-grid-item"
-    style="background-image: url('/assets/img/test.jpg');"
-    title="Test Post"
-  >
-    <div class="hero-category">Networking</div>
-    <div class="hero-overlay">
-      <span>Understanding Firewalls</span>
-    </div>
-  </a>
+<section style="height: 300px; background-image: url('https://placehold.co/600x300'); background-size: cover;">
+  <h2 style="color: white; padding: 2rem;">Hero Test</h2>
 </section>
+
 
 
 ## Recent Blog Posts
