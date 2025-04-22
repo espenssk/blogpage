@@ -5,10 +5,6 @@ title: Home
 
 ## Featured Articles
 
-{% for post in site.posts %}
-  <p style="color: green;">DEBUG POST: {{ post.title }} | Thumbnail: {{ post.thumbnail }}</p>
-{% endfor %}
-
 <section class="hero-grid fade-in">
   {% assign featured = site.posts | where_exp: "post", "post.thumbnail" %}
   {% assign featured = featured | slice: 0, 4 %}
@@ -28,6 +24,7 @@ title: Home
     </a>
   {% endfor %}
 </section>
+
 
 
 
