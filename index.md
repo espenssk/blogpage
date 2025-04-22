@@ -15,7 +15,7 @@ title: Home
       style="background-image: url('{{ post.thumbnail | default: '/assets/images/fallback.jpg' | relative_url }}');"
       title="{{ post.title }}"
     >
-      {% if post.categories[0] %}
+      {% if post.categories %}
         <div class="hero-category">{{ post.categories[0] }}</div>
       {% endif %}
       <div class="hero-overlay">
@@ -24,6 +24,7 @@ title: Home
     </a>
   {% endfor %}
 </section>
+
 
 
 ## Recent Blog Posts
