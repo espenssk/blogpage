@@ -57,28 +57,30 @@ title: Home
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const titles = [
+    const posts = [
       {% assign featured = site.posts | sort: "date" | reverse | slice: 0, 6 %}
       {% for post in featured %}
-        "{{ post.title | escape }}"{% unless forloop.last %},{% endunless %}
+        {
+          title: "{{ post.title | escape }}",
+          url: "{{ post.url }}"
+        }{% unless forloop.last %},{% endunless %}
       {% endfor %}
     ];
     let index = 0;
-    const rotator = document.getElementById("featured-rotator-text");
+    const rotatorText = document.getElementById("featured-rotator-text");
+    const rotatorLink = document.getElementById("featured-rotator-link");
 
-    function rotateTitle() {
-      rotator.classList.remove("fade-in");
-      void rotator.offsetWidth;
-      rotator.textContent = titles[index];
-      rotator.classList.add("fade-in");
-      index = (index + 1) % titles.length;
+    function rotatePost() {
+      const post = posts[index];
+      rotatorText.classList.remove("fade-in");
+      void rotatorText.offsetWidth; // restart animation
+      rotatorText.textContent = post.title;
+      rotatorLink.href = post.url;
+      rotatorText.classList.add("fade-in");
+      index = (index + 1) % posts.length;
     }
 
-    rotateTitle();
-    setInterval(rotateTitle, 8000);
+    rotatePost();
+    setInterval(rotatePost, 8000);
   });
 </script>
-
-  
-  {% endfor %}
-</ul>
