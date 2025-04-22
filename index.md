@@ -5,15 +5,25 @@ title: Home
 
 ## Featured Articles
 
-<p style="color: red; font-weight: bold;">[[ DEBUG: HERO BLOCK STARTS BELOW ]]</p>
-
-<div class="featured-divider"></div>
-
 <section class="hero-grid fade-in">
-...
+  {% assign featured = site.posts | where_exp: "post", "post.thumbnail" %}
+  {% assign featured = featured | slice: 0, 4 %}
+  {% for post in featured %}
+    <a
+      href="{{ post.url }}"
+      class="hero-grid-item"
+      style="background-image: url('{{ post.thumbnail | default: '/assets/images/fallback.jpg' | relative_url }}');"
+      title="{{ post.title }}"
+    >
+      {% if post.categories[0] %}
+        <div class="hero-category">{{ post.categories[0] }}</div>
+      {% endif %}
+      <div class="hero-overlay">
+        <span>{{ post.title }}</span>
+      </div>
+    </a>
+  {% endfor %}
 </section>
-
-
 
 
 ## Recent Blog Posts
