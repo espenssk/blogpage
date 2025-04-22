@@ -11,19 +11,24 @@ title: Home
 </div>
 
 ## Featured Articles
-
 <section class="hero-grid fade-in">
-  <a
-    href="#"
-    class="hero-grid-item"
-    style="background-image: url('/assets/images/zerotrust.png');"
-    title="Debug Tile"
-  >
-    <div class="hero-category">Debug</div>
-    <div class="hero-overlay">
-      <span>Debug Tile Rendered</span>
-    </div>
-  </a>
+  {% assign featured = site.posts | where_exp: "post", "post.thumbnail" %}
+  {% assign featured = featured | slice: 0, 4 %}
+  {% for post in featured %}
+    <a
+      href="{{ post.url }}"
+      class="hero-grid-item"
+      style="background-image: url('{{ post.thumbnail | default: '/assets/images/fallback.jpg' | relative_url }}');"
+      title="{{ post.title }}"
+    >
+      {% if post.categories %}
+        <div class="hero-category">{{ post.categories[0] }}</div>
+      {% endif %}
+      <div class="hero-overlay">
+        <span>{{ post.title }}</span>
+      </div>
+    </a>
+  {% endfor %}
 </section>
 
 ## Recent Blog Posts
