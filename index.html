@@ -10,37 +10,29 @@ title: Home
   </a>
 </div>
 
-## Featured Articles
 <h2 class="fade-in">Featured Articles</h2>
 
-<div class="hero-carousel-wrapper">
-  <button class="carousel-arrow left" onclick="scrollHero(-1)">&#10094;</button>
-  
-  <section class="hero-grid fade-in" id="hero-carousel">
-    {% assign featured = site.posts | where_exp: "post", "post.thumbnail" %}
-    {% assign featured = featured | slice: 0, 10 %}
-    {% for post in featured %}
-      <a
-        href="{{ post.url }}"
-        class="hero-grid-item"
-        style="background-image: url('{{ post.thumbnail | default: '/assets/images/fallback.jpg' | relative_url }}');"
-        title="{{ post.title }}"
-      >
-        {% if post.categories %}
-          <div class="hero-category">{{ post.categories[0] | upcase }}</div>
-        {% endif %}
-        <div class="hero-overlay">
-          <span>{{ post.title }}</span>
-        </div>
-      </a>
-    {% endfor %}
-  </section>
+<section class="hero-grid fade-in">
+  {% assign featured = site.posts | where_exp: "post", "post.thumbnail" %}
+  {% assign featured = featured | slice: 0, 4 %}
+  {% for post in featured %}
+    <a
+      href="{{ post.url }}"
+      class="hero-grid-item"
+      style="background-image: url('{{ post.thumbnail | default: '/assets/images/fallback.jpg' | relative_url }}');"
+      title="{{ post.title }}"
+    >
+      {% if post.categories %}
+        <div class="hero-category">{{ post.categories[0] }}</div>
+      {% endif %}
+      <div class="hero-overlay">
+        <span>{{ post.title }}</span>
+      </div>
+    </a>
+  {% endfor %}
+</section>
 
-  <button class="carousel-arrow right" onclick="scrollHero(1)">&#10095;</button>
-</div>
-
-
-## Recent Blog Posts
+<h2 class="fade-in">Recent Blog Posts</h2>
 
 <ul class="post-list">
   {% for post in site.posts %}
@@ -64,7 +56,6 @@ title: Home
 </ul>
 
 <script>
-  // Flash rotator
   document.addEventListener("DOMContentLoaded", function () {
     const posts = [
       {% assign featured = site.posts | sort: "date" | reverse | slice: 0, 6 %}
@@ -92,13 +83,4 @@ title: Home
     rotatePost();
     setInterval(rotatePost, 8000);
   });
-
-  // Hero carousel auto scroll and arrow logic
-  function scrollHero(direction) {
-    const carousel = document.getElementById('hero-carousel');
-    const cardWidth = carousel.querySelector('.hero-grid-item').offsetWidth + 16; // gap compensation
-    carousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
-  }
-
-  setInterval(() => scrollHero(1), 7000); // Auto-scroll every 7s
 </script>
